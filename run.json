@@ -1,0 +1,40 @@
+{
+  "build": "fold-coords",
+  "measured": {
+    "verifyPair": 1,
+    "memoryPair": 1,
+    "crossCapability": 0,
+    "highdToMemory": 0.7071,
+    "retrievalEqualsArgmaxCoupling": true,
+    "consensusMemberAgreement": 0.9975,
+    "consensusOutlierAgreement": 0
+  },
+  "claims": [
+    {
+      "id": "P1",
+      "text": "Coupling is a proper similarity — κ(self)=1 and like-capability organs couple fully",
+      "check": "verifyPair === 1 && memoryPair === 1",
+      "pass": true
+    },
+    {
+      "id": "P2",
+      "text": "Retrieval IS argmax coupling — the same metric underlies retrieval and coupling",
+      "check": "retrievalEqualsArgmaxCoupling === true",
+      "pass": true
+    },
+    {
+      "id": "P3",
+      "text": "Consensus is the resonant region — a cluster member agrees far more than an outlier",
+      "check": "consensusMemberAgreement - consensusOutlierAgreement > 0.9",
+      "pass": true
+    },
+    {
+      "id": "P4",
+      "text": "Unlike-capability organs are orthogonal (κ=0); a half-shared organ sits at 1/√2",
+      "check": "crossCapability === 0 && highdToMemory > 0.7 && highdToMemory < 0.71",
+      "pass": true
+    }
+  ],
+  "allPass": true,
+  "note": "Re-derived from the sealed fold.mjs; ci-verify.mjs re-checks on the runner."
+}
