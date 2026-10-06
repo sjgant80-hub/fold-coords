@@ -1,0 +1,10 @@
+# fold-coords
+Hyper-geometry #3: unified N-dimensional fold-coordinates for the sovereign estate. Coupling (κ),
+consensus and retrieval are ONE geometric metric (cosine of the fold-coordinates), demonstrated on the
+16 estate organs. Kernel-backed (the live page re-derives from the gated kernel), witnessed, fuzz-gated, sealed.
+
+- Live: https://sjgant80-hub.github.io/fold-coords/
+- Source: https://github.com/sjgant80-hub/fold-coords
+- Kernel: fold.mjs (foldCoord, kappa, nearest, consensus, agreement, isOutlier)
+- Facts: verify-organs κ=1, cross-capability κ=0, retrieval==argmax-coupling true, consensus separation 0.9975
+- Scope: the unification is proven on declared organ signatures; wiring live learned fold-addresses is next.

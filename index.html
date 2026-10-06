@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Fold Coordinates</title>
+<meta name="description" content="Hyper-geometry #3: unified N-dimensional fold-coordinates. Coupling (κ), consensus and retrieval are one geometric metric — shown live on the estate's 16 organs, re-derived in your browser from the same gated kernel the tests and CI run." />
+<link rel="canonical" href="https://sjgant80-hub.github.io/fold-coords/" />
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"SoftwareSourceCode","name":"fold-coords",
+  "description":"Unified N-dimensional fold-coordinates for a sovereign AI estate: coupling, consensus and retrieval as one cosine metric over the organs' fold-addresses.",
+  "programmingLanguage":"JavaScript","codeRepository":"https://github.com/sjgant80-hub/fold-coords",
+  "url":"https://sjgant80-hub.github.io/fold-coords/","author":{"@type":"Person","name":"Kar (AI-Native Solutions, sjgant80-hub)"} }
+</script>
+<style>
+  :root { --bg:#f6f7fb; --panel:#fff; --ink:#141720; --muted:#5a6373; --line:#e3e7ef;
+    --accent:#3b5bdb; --accent-soft:#eaefff; --good:#1a7f4b; --good-soft:#e5f6ec; --warn:#b4530a;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    color-scheme:light; }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --bg:#0f1118; --panel:#161a24; --ink:#e8ebf2;
+    --muted:#9aa3b4; --line:#262c3a; --accent:#8aa0ff; --accent-soft:#1b2340; --good:#4cc98a; --good-soft:#10281c; --warn:#e0923f; color-scheme:dark; } }
+  :root[data-theme="dark"]{ --bg:#0f1118; --panel:#161a24; --ink:#e8ebf2; --muted:#9aa3b4; --line:#262c3a;
+    --accent:#8aa0ff; --accent-soft:#1b2340; --good:#4cc98a; --good-soft:#10281c; --warn:#e0923f; color-scheme:dark; }
+  *{box-sizing:border-box;} body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;}
+  .wrap{max-width:960px;margin:0 auto;padding:24px 16px 72px;}
+  .kicker{font:600 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;}
+  h1{font-size:clamp(26px,5vw,40px);line-height:1.08;margin:0 0 12px;text-wrap:balance;letter-spacing:-.02em;}
+  .lede{font-size:clamp(16px,2.4vw,19px);color:var(--muted);margin:0 0 8px;max-width:64ch;}
+  a{color:var(--accent);}
+  .selfcheck{display:flex;align-items:center;gap:10px;margin:20px 0;padding:12px 16px;border:1px solid var(--line);
+    border-radius:12px;background:var(--good-soft);font:600 14px/1.4 var(--sans);}
+  .selfcheck .dot{width:10px;height:10px;border-radius:50%;background:var(--good);flex:none;}
+  .selfcheck.bad{background:#fdeceae0;} .selfcheck.bad .dot{background:#c0392b;}
+  section{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;margin:20px 0;}
+  h2{font-size:20px;margin:0 0 6px;letter-spacing:-.01em;} .sub{color:var(--muted);font-size:14px;margin:0 0 16px;}
+  .three{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0;}
+  .op{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);}
+  .op b{font-family:var(--mono);color:var(--accent);font-size:13px;} .op p{margin:6px 0 0;font-size:13.5px;color:var(--muted);}
+  .heat{overflow-x:auto;} table{border-collapse:collapse;font-size:11px;font-family:var(--mono);}
+  th{font-weight:600;color:var(--muted);padding:3px 4px;text-align:right;white-space:nowrap;}
+  th.col{writing-mode:vertical-rl;text-align:left;height:70px;padding:4px 2px;}
+  td{width:20px;height:20px;text-align:center;color:#0d1b2a;border:1px solid var(--panel);}
+  .router{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  select{font:500 15px var(--sans);padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);}
+  .rank{margin-top:14px;display:flex;flex-direction:column;gap:6px;}
+  .rrow{display:grid;grid-template-columns:1.4fr 3fr auto;gap:10px;align-items:center;font-size:13.5px;}
+  .rrow .bar{height:10px;border-radius:5px;background:var(--accent);} .rrow .nm{font-family:var(--mono);}
+  .rrow .k{font-family:var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;}
+  .claims li{margin:7px 0;} .claims .ok{color:var(--good);font-weight:700;font-family:var(--mono);}
+  .note{font-size:13.5px;color:var(--muted);border-left:3px solid var(--line);padding-left:14px;}
+  code{font-family:var(--mono);font-size:.92em;background:var(--accent-soft);padding:1px 5px;border-radius:5px;}
+  footer{color:var(--muted);font-size:13px;margin-top:28px;}
+  .pill{display:inline-block;font:600 12px var(--mono);padding:4px 9px;border-radius:999px;background:var(--good-soft);color:var(--good);}
+  .pill.bad{background:#fdeceae0;color:#c0392b;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Hyper-geometry · upgrade #3 · sovereign</p>
+  <h1>One geometry for coupling, consensus &amp; retrieval</h1>
+  <p class="lede">Every organ's fold-address is a point in a high-dimensional coordinate space. Then three things the estate used to do separately become the <strong>same</strong> operation — a single similarity metric <code>κ</code>. This page re-derives it all in your browser from the gated kernel.</p>
+
+  <div class="selfcheck" id="selfcheck"><span class="dot"></span><span id="sc">Re-deriving from the kernel…</span></div>
+
+  <div class="three">
+    <div class="op"><b>COUPLING · κ(a,b)</b><p>How strongly two fold-addresses bond — the cosine of their coordinates.</p></div>
+    <div class="op"><b>RETRIEVAL · nearest()</b><p>The item of maximum κ to a query. Provably <em>equals argmax coupling</em> — same metric.</p></div>
+    <div class="op"><b>CONSENSUS · agreement()</b><p>The resonant region (mean direction); an outlier shows up as low κ to it.</p></div>
+  </div>
+
+  <section>
+    <h2>Coupling across the 16 organs</h2>
+    <p class="sub">κ between every pair of organs, by what each one does. Darker = more coupled. Like-capability organs bond; unlike are orthogonal.</p>
+    <div class="heat" id="heat"></div>
+  </section>
+
+  <section>
+    <h2>Retrieval = nearest in fold-space</h2>
+    <p class="sub">Pick an organ; the kernel ranks the rest by κ — the same number the heatmap shows, the same metric coupling uses.</p>
+    <div class="router"><select id="q" aria-label="query organ"></select></div>
+    <div class="rank" id="rank"></div>
+  </section>
+
+  <section>
+    <h2>Consensus &amp; the outlier</h2>
+    <p class="sub">A tight cluster of coordinates versus one off on its own axis. Agreement with the consensus region separates them.</p>
+    <div id="consensus"></div>
+  </section>
+
+  <section>
+    <h2>The sealed claims</h2>
+    <p class="sub">Pre-registered in <code>predictions.json</code> before measurement; checked live against the kernel now.</p>
+    <ul class="claims" id="claims"></ul>
+  </section>
+
+  <section>
+    <h2>Honest scope</h2>
+    <p class="note">This proves the <strong>unification</strong>: coupling, retrieval and consensus are one metric over fold-coordinates, demonstrated on the organs' real capability signatures. The signatures here are a declared example map (what each organ does); wiring live, learned fold-addresses from every organ's running state is the next step, flagged, not claimed. The κ / geometry framing is private language; the buildable thing is the one cosine metric.</p>
+  </section>
+
+  <footer>Kernel: <code>fold.mjs</code> — mutation-witnessed (score 1.0), fuzz-gated, sealed. Source: <a href="https://github.com/sjgant80-hub/fold-coords">github.com/sjgant80-hub/fold-coords</a>. Built by Kar · AI-Native Solutions.</footer>
+</div>
+
+<script type="module">
+  import { organCoords, kappa, nearest, consensus, agreement, foldCoord } from './fold.mjs';
+
+  const C = organCoords();
+  const names = Object.keys(C);
+
+  // derive the sealed facts inline from the kernel (same computation ci-verify.mjs runs on the runner)
+  const r4 = (x) => Math.round(x * 1e4) / 1e4;
+  const _others = names.filter((n) => n !== 'crystal').map((n) => C[n]);
+  const _nr = nearest(C['crystal'], _others);
+  const _maxK = Math.max(..._others.map((v) => kappa(C['crystal'], v)));
+  const _cl = [foldCoord([1, 0, 0]), foldCoord([0.9, 0.1, 0]), foldCoord([1, 0.1, 0])];
+  const _out = foldCoord([0, 0, 1]);
+  const m = {
+    verifyPair: r4(kappa(C['witness'], C['octa-verify'])),
+    memoryPair: r4(kappa(C['crystal'], C['fall-remember'])),
+    crossCapability: r4(kappa(C['witness'], C['crystal'])),
+    highdToMemory: r4(kappa(C['highd-recall'], C['crystal'])),
+    retrievalEqualsArgmaxCoupling: _nr.score === _maxK,
+    consensusMemberAgreement: r4(agreement(_cl[0], _cl)),
+    consensusOutlierAgreement: r4(agreement(_out, _cl)),
+  };
+
+  // heatmap
+  const cell = (k) => {
+    const t = Math.max(0, k); // 0..1
+    const bg = `color-mix(in srgb, var(--accent) ${Math.round(t * 100)}%, #ffffff)`;
+    return `<td style="background:${bg}" title="κ=${k.toFixed(2)}">${k === 1 ? '1' : k === 0 ? '' : k.toFixed(1).slice(1)}</td>`;
+  };
+  let html = '<table><tr><th></th>' + names.map((n) => `<th class="col">${n}</th>`).join('') + '</tr>';
+  for (const a of names) {
+    html += `<tr><th>${a}</th>` + names.map((b) => cell(kappa(C[a], C[b]))).join('') + '</tr>';
+  }
+  html += '</table>';
+  document.getElementById('heat').innerHTML = html;
+
+  // retrieval
+  const qSel = document.getElementById('q');
+  names.forEach((n) => qSel.add(new Option(n, n)));
+  qSel.value = 'crystal';
+  function rank() {
+    const q = qSel.value;
+    const others = names.filter((n) => n !== q).map((n) => ({ n, k: kappa(C[q], C[n]) })).sort((x, y) => y.k - x.k);
+    document.getElementById('rank').innerHTML = others.slice(0, 8).map((o) =>
+      `<div class="rrow"><span class="nm">${o.n}</span><span class="bar" style="width:${Math.max(2, o.k * 100)}%"></span><span class="k">κ ${o.k.toFixed(3)}</span></div>`).join('');
+  }
+  qSel.onchange = rank; rank();
+
+  // consensus demo
+  const cl = [foldCoord([1, 0, 0]), foldCoord([0.9, 0.1, 0]), foldCoord([1, 0.1, 0])];
+  const outlier = foldCoord([0, 0, 1]);
+  const mem = agreement(cl[0], cl), out = agreement(outlier, cl);
+  document.getElementById('consensus').innerHTML =
+    `<div class="rank">
+       <div class="rrow"><span class="nm">cluster member</span><span class="bar" style="width:${mem * 100}%"></span><span class="k">agreement ${mem.toFixed(3)}</span></div>
+       <div class="rrow"><span class="nm">outlier</span><span class="bar" style="width:${Math.max(2, out * 100)}%;background:var(--warn)"></span><span class="k">agreement ${out.toFixed(3)}</span></div>
+     </div>
+     <p class="sub" style="margin-top:12px">Separation ${(mem - out).toFixed(3)} — the consensus region cleanly tells the member from the outlier.</p>`;
+
+  // sealed claims + self-check
+  let allPass = true;
+  try {
+    const preds = await fetch('./predictions.json').then((r) => r.json());
+    const holds = (expr) => { const { verifyPair, memoryPair, crossCapability, highdToMemory, retrievalEqualsArgmaxCoupling, consensusMemberAgreement, consensusOutlierAgreement } = m; try { return !!eval(expr); } catch { return false; } };
+    document.getElementById('claims').innerHTML = preds.claims.map((c) => {
+      const p = holds(c.check); if (!p) allPass = false;
+      return `<li><span class="ok">${p ? '✓' : '✗'}</span> ${c.text} <code>${c.check}</code></li>`;
+    }).join('');
+  } catch { document.getElementById('claims').innerHTML = '<li class="note">predictions.json not reachable here — the heatmap above is still live from the kernel.</li>'; }
+
+  const ok = m.verifyPair === 1 && m.memoryPair === 1 && m.crossCapability === 0 && m.retrievalEqualsArgmaxCoupling && allPass;
+  const sc = document.getElementById('selfcheck');
+  document.getElementById('sc').innerHTML = ok
+    ? `Self-check ✓ — re-derived from the kernel: coupling=retrieval=consensus is one metric; verify-organs κ=1, cross-capability κ=0, retrieval==argmax coupling <span class="pill">true</span>`
+    : 'Self-check mismatch — do not trust this build.';
+  if (!ok) sc.classList.add('bad');
+</script>
+</body>
+</html>

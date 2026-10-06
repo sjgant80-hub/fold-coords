@@ -1,0 +1,8 @@
+{
+  "name": "fold-coords",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Hyper-geometry #3: unified N-dimensional fold-coordinates — coupling, consensus and retrieval as one geometric metric. Kernel-backed, witnessed, sealed.",
+  "scripts": { "test": "node --test" }
+}
